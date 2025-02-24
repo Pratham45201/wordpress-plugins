@@ -40,6 +40,7 @@ function sp_handle_list_posts()
     $posts = $wpdb->get_results(
         "SELECT post_title from {$table_name} WHERE post_type = 'post' AND post_status = 'publish'"
     );
+
     if (count($posts) > 0) {
         $outputhtml = "<ul>";
         foreach ($posts as $post) {
@@ -50,4 +51,26 @@ function sp_handle_list_posts()
     }
     return 'No post found';
 }
-add_shortcode("list-posts", "sp_handle_list_posts");
+add_shortcode("list-posts", "sp_handle_list_posts_wp_query_class");
+
+function sp_handle_list_posts_wp_query_class($attributes){
+    $attributes = shortcode_atts(array(
+        "number" => 5
+    ), $attributes, "list-posts");
+
+    $query = new WP_Query(array(
+        "posts_per_page" => $attributes['number'],
+        "post_status" => "publish",
+    ));
+
+    if($query -> have_posts()){
+        $outputhtml = "<ul>";
+        while($query->have_posts()){
+            $query->the_post(); 
+            $outputhtml .= "<li>".get_the_date()."</li>";
+        }
+        $outputhtml .= "</ul>";
+        return $outputhtml;
+    }
+    return "No posts found";
+}
