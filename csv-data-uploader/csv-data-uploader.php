@@ -98,5 +98,5 @@ function cdu_ajax_handler()
     }
     exit;
 }
-add_action("wp_ajax_cdu_submit_form_data", "cdu_ajax_handler");
-add_action("wp_ajax_nopriv_cdu_submit_form_data", "cdu_ajax_handler");
+add_action("wp_ajax_cdu_submit_form_data", "cdu_ajax_handler"); // Lets logged in user upload data
+add_action("wp_ajax_nopriv_cdu_submit_form_data", "cdu_ajax_handler"); // Lets non-logged in user upload data
