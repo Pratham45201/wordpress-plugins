@@ -1,0 +1,139 @@
+/* Main container styling */
+#wp_employee_crud_plugin {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+#wp_employee_crud_plugin h3 {
+  color: #23282d;
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Form styling */
+#frm_add_employee {
+  margin-bottom: 30px;
+}
+
+#frm_add_employee p {
+  margin-bottom: 15px;
+}
+
+#frm_add_employee label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+#frm_add_employee input[type="text"],
+#frm_add_employee input[type="email"],
+#frm_add_employee select,
+#frm_add_employee input[type="file"] {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 24px;
+}
+
+#frm_add_employee label[type] {
+  display: inline-block;
+  font-weight: normal;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #666;
+}
+
+/* Button styling */
+#btn_save_data,
+.btn_edit_employee,
+.btn_delete_employee {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+#btn_save_data {
+  background-color: #0073aa;
+  color: white;
+}
+
+#btn_save_data:hover {
+  background-color: #005177;
+}
+
+.btn_edit_employee {
+  background-color: #f0f0f1;
+  color: #23282d;
+  margin-right: 5px;
+}
+
+.btn_edit_employee:hover {
+  background-color: #e5e5e5;
+}
+
+.btn_delete_employee {
+  background-color: #dc3232;
+  color: white;
+}
+
+.btn_delete_employee:hover {
+  background-color: #b32424;
+}
+
+/* Table styling */
+#wp_employee_crud_plugin table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  text-align: left;
+}
+
+#wp_employee_crud_plugin table th {
+  background-color: #f0f0f1;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+}
+
+#wp_employee_crud_plugin table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+#wp_employee_crud_plugin table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #wp_employee_crud_plugin {
+    padding: 15px;
+  }
+
+  #wp_employee_crud_plugin table {
+    display: block;
+    overflow-x: auto;
+  }
+}
