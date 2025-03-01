@@ -30,3 +30,16 @@ register_deactivation_hook(__FILE__, [$employeeObject, "deleteEmployeesTable"]);
 add_shortcode("wp-employee-form", [$employeeObject, "createEmployeesForm"]);
 
 add_action("wp_enqueue_scripts", [$employeeObject, "addAssetsToPlugin"]);
+
+// Process ajax request (only works when user is logged in)
+add_action("wp_ajax_wce_add_employee", [$employeeObject, "handleAddEmployeeFormData"]);
+add_action("wp_ajax_wce_load_employees_data", [$employeeObject, "handleLoadEmployeesData"]);
+add_action("wp_ajax_wce_delete_employee", [$employeeObject, "handleDeleteEmployee"]);
+add_action("wp_ajax_wce_get_employee_data", [$employeeObject, "handleGetSingleEmployee"]);
+add_action("wp_ajax_wce_edit_employee", [$employeeObject, "handleUpdateEmployeeData"]);
+
+// Make it available to non logged-in users
+// add_action("wp_ajax_nonpriv_wce_add_employee", [$employeeObject, "handleAddEmployeeFormData"]);
+// add_action("wp_ajax_nonpriv_wce_load_employees_data", [$employeeObject, "handleLoadEmployeesData"]);
+// add_action("wp_ajax_nonpriv_wce_delete_employee", [$employeeObject, "handleDeleteEmployee"]);
+// add_action("wp_ajax_nonpriv_wce_get_employee_data", [$employeeObject, "handleGetSingleEmployee"]);

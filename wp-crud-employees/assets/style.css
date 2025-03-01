@@ -137,3 +137,7 @@
     overflow-x: auto;
   }
 }
+
+.hide_element{
+  display: none;
+}
